@@ -43,6 +43,15 @@ export default function Home ({ hCaptchaSiteKey }) {
         <b>Preise</b>: Hack The Box Gift Cards
       </p>
 
+      <h2>Eckdaten</h2>
+      <p>
+        <b>Datum</b>: 11.12.2021<br />
+        <b>Uhrzeit</b>: 10 bis 18 Uhr<br />
+        <b>Ort</b>: Technische Hochschule Ingolstadt<br />
+        <b>Raum</b>: TBD<br />
+        <b>Teilnehmer</b>: ca. 20-40 einzeln oder in Teams ohne Wertung<br />
+      </p>
+
       <h2>Sponsoren</h2>
       <p>
         folgen

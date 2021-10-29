@@ -26,6 +26,7 @@ export default function Home ({ hCaptchaSiteKey }) {
         Am 11.12.2021 veranstalten wir einen Capture The Flag (CTF). Ein CTF ist ein Wettbewerb bei dem
         man legal {'"hacken"'} kann, also sein Können im Bereich IT-Sicherheit, Forensik und co. unter Beweis
         stellen kann.
+        <br />
         <a href="https://de.wikipedia.org/wiki/Capture_the_Flag#Computersicherheit">
           Mehr Informationen zu CTFs
         </a>

@@ -11,17 +11,17 @@ const transporter = nodemailer.createTransport({
 })
 
 function getSubject (form) {
-  return 'Neue Nachricht im Meckerkasten der Fachschaft Informatik'
+  return 'Neue Anmeldung zum CTF'
 }
 
 function getBody (form) {
-  return `Es ist eine neue Nachricht im Meckerkasten der Fachschaft Informatik eingegangen.
+  return `Es ist eine neue Anmeldung eingegangen
 
-Antwortadresse:
-${form.email || '(nicht angegeben)'}
+Name: ${form.name}
 
-Nachricht:
-${form.message}
+E-Mail: ${form.email}
+
+Studiengang: ${form.course}
 `
 }
 

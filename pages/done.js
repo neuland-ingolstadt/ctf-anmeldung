@@ -8,11 +8,11 @@ export default function Done () {
     <Container className="p-3">
       <Header />
       <p>
-        Vielen Dank für deine Nachricht. 😊
+        Deine Anmeldung ist eingengen. 😊
       </p>
       <p>
-        Falls du eine E-Mail-Adresse angegeben hast, werden wir dir so bald wie möglich antworten.
-        Du kannst uns natürlich jederzeit auch unter <a href="mailto:studver@thi.de">studver@thi.de</a> sowie in Raum W003 erreichen.
+        Wenn alles gut geht erhältst in kürze eine Bestätitugungs E-Mail.
+        Solltest du noch Fragen haben wende dich gerne an <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>
       </p>
       <Footer />
     </Container>

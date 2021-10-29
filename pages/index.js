@@ -23,36 +23,60 @@ export default function Home ({ hCaptchaSiteKey }) {
     <Container className={[styles.container, 'p-3']}>
       <Header />
       <p>
-        Stört dich oder beschäftigt dich etwas bezüglich unserer Hochschule, aber du möchtest es nicht offen ansprechen?
-        Hier kannst du uns anonym deine Sorgen und deine Beschwerden mitteilen. :)
+        Am 11.12.2021 veranstalten wir einen Capture The Flag (CTF). Ein CTF ist ein Wettbewerb bei dem
+        man legal {'"hacken"'} kann, also sein Können im Bereich IT-Sicherheit, Forensik und co. unter Beweis
+        stellen kann.
+        <a href="https://de.wikipedia.org/wiki/Capture_the_Flag#Computersicherheit">
+          Mehr Informationen zu CTFs
+        </a>
       </p>
       <p>
-        Du kannst uns natürlich auch jederzeit unter <a href="mailto:studver@thi.de">studver@thi.de</a> sowie in Raum W003 erreichen.
+        Unser CTF ist Dabei so gestaltet dass auch Menschen mit wenig Erfahrung mitmachen können.
+        Es gibt zu jeder Kategorie jeweils eine leichte, eine mittlere und eine schwere Aufgabe.
+        <br />
+        <b>Kategorien</b>: web, stego, forensic, crypto, osint, re, pwn
       </p>
+      <p>
+        Teams sind erlaubt, Preise gibt es jedoch nur für die besten drei Einzelkämpfer.
+        <br />
+        <b>Preise</b>: Hack The Box Gift Cards
+      </p>
+
+      <h2>Sponsoren</h2>
+      <p>
+        folgen
+      </p>
+
+      <h2>Anmeldung</h2>
       <Form method="post" action="api/submit">
         <Form.Group className="mb-3">
-          <Form.Label>Nachricht:</Form.Label>
+          <Form.Label>Name / Nickname</Form.Label>
           <Form.Control
-            as="textarea"
-            name="message"
-            rows={5}
+            name="name"
+            type="text"
             required
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>E-Mail-Adresse (optional):</Form.Label>
+          <Form.Label>E-Mail-Adresse:</Form.Label>
           <Form.Control
             name="email"
             type="email"
+            required
             />
-          <Form.Text className="text-muted">
-            Damit wir dich kontaktieren können, wenn du das möchtest.
-          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Studiengang:</Form.Label>
+          <Form.Control
+            name="course"
+            type="text"
+            placeholder="Informatik 3. Semester, Bachelorand Künstliche Intelligenz, ..."
+            />
         </Form.Group>
         <Form.Group>
           <HCaptcha
             sitekey={hCaptchaSiteKey}
-            onVerify={(token, ekey) => setVerified(true)}
+            onVerify={() => setVerified(true)}
           />
         </Form.Group>
         <Button variant="primary" type="submit" disabled={!verified}>Absenden</Button>

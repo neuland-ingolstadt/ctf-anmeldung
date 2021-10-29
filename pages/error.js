@@ -14,17 +14,10 @@ export default function Error () {
         Uff, es ist ein Fehler aufgetreten.
       </p>
       <p>
-        Bitte probiere es noch ein Mal. Wenn es dann immer noch nicht funktioniert, schreib uns bitte ein E-Mail an <a href="mailto:studver@thi.de">studver@thi.de</a>.
+        Bitte probiere es noch ein Mal. Wenn es dann immer noch nicht funktioniert, schreib uns bitte ein E-Mail an <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>.
       </p>
       <p>
         {router.query.message}
-      </p>
-      <p className="text-muted mt-3">
-        <small>
-          Ein Angebot der Fachschaft Informatik an der Technischen Hochschule Ingolstadt.
-          <br />
-          <a href="https://neuland-ingolstadt.de/impressum.htm" target="_blank" rel="noreferrer">Impressum und Datenschutz</a>
-        </small>
       </p>
       <Footer />
     </Container>

@@ -7,13 +7,17 @@ export default function Done () {
   return (
     <Container className="p-3">
       <Header />
+        <br></br>
+        <br></br>
       <p>
-        Deine Anmeldung ist eingengen. 😊
+        Deine Anmeldung ist eingegangen. 😊
       </p>
       <p>
-        Wenn alles gut geht erhältst in kürze eine Bestätitugungs E-Mail.
-        Solltest du noch Fragen haben wende dich gerne an <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>
+          Du erhältst in Kürze eine Bestätigungs-E-Mail.
+          Wir stehen dir gerne für Fragen oder Anliegen unter <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a> zur Verfügung.
       </p>
+        <br></br>
+        <br></br>
       <Footer />
     </Container>
   )

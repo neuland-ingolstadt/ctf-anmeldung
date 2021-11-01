@@ -6,7 +6,7 @@ export default function Header () {
     <>
       <Head>
         <title>Neuland CTF 2021</title>
-        <meta name="description" content="Meckerkasten von der Fachschaft Informatik für die Studierenden der Fakultät Informatik" />
+        <meta name="description" content="Neuland CTF 2021" />
         <link rel="icon" type="image/svg+xml" href="icon.png" />
 
         <meta property="og:title" content="Neuland CTF 2021" />
@@ -14,8 +14,9 @@ export default function Header () {
         <meta property="og:url" content="https://ctf.neuland-ingolstadt.de/" />
         <meta property="og:image" content="https://ctf.neuland-ingolstadt.de/logo.png" />
       </Head>
-      <img src="/logo.png" width="300" className="mb-3" />
-      <h1>Neuland CTF 2021</h1>
+        <center>
+      <img src="/logo.png" width="40%" className="mb-3 neulandLogo"/>
+        </center>
     </>
   )
 }

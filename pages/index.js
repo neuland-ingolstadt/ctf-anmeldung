@@ -21,47 +21,48 @@ export default function Home ({ hCaptchaSiteKey }) {
 
   return (
         <Container className={[styles.container, 'p-3']}>
-            <br></br> <br></br>
+
             <Header/>
+            <br></br>
+            <br></br>
             <p>
-                user@NEULAND:~$ ./ctf-2021 -info
+                admin@NEULAND:~$ ./ctf-2021 -info
                 <br></br>
-                Capture the Flag ist ein Wettbewerb bei dem man legal hacken kann, du wirst Aufgaben in der Kategorien
+                Capture the Flag ist ein Wettbewerb, bei dem man legal hacken kann, du wirst Aufgaben in der Kategorien
                 web, stego, forensic, crypto, osint, re und pwn lösen.
-                Für jeden richtigen Hack gibt es eine Flage, die dir Punkte und einen Platz auf dem Scoreboard sichert.
+                Für jeden richtigen Hack gibt es eine Flagge, die dir Punkte und einen Platz auf dem Scoreboard sichert.
                 Hierfür benötigt ihr keine Vorkenntnisse, der CTF beinhaltet Aufgaben für alle Erfahrungsgerade.
-                Neben dem Kennenlernen von Studierenden mit gleichen Interessen und dem Spaß des beim Rätsel lösen gibt
-                es natürlich auch Essen/Trinken und Preise für die besten Hacker.
+                Neben dem Kennenlernen von Studierenden mit gleichen Interessen und dem Spaß beim Rätsel lösen gibt
+                es natürlich auch kostenloses Essen/Trinken und Preise für die besten Hacker.
             </p>
-            <br></br>
+
             <p>
-                user@NEULAND:~$ ./ctf-2021 -wann
+                admin@NEULAND:~$ ./ctf-2021 -wann
                 <br></br>
-                11.12.2021 von 10 bis 18 Uhr
+                Am 11.12.2021 von 10 bis 18 Uhr.
             </p>
-            <br></br>
+
             <p>
-                user@NEULAND:~$ ./ctf-2021 -wo
+                admin@NEULAND:~$ ./ctf-2021 -wo
                 <br></br>
-                Technische Hochschule Ingolstadt im Raum G105
+                An der Technische Hochschule Ingolstadt im Raum G105.
             </p>
-            <br></br>
+
             <p>
-                user@NEULAND:~$ ./ctf-2021 -wer
+                admin@NEULAND:~$ ./ctf-2021 -wer
                 <br></br>
-                Alle THI Studenten sind herzlich eingelanden, es können bis zu 40 Personen teilnehmen. Teams sind
-                erlaubt qulaifizieren sich jedoch nicht für das gewinnen von Preisen.
+                Alle THI Studenten sind herzlich eingeladen, es können bis zu 40 Personen teilnehmen. Teams sind
+                erlaubt qualifizieren sich jedoch nicht für das Gewinnen von Preisen.
             </p>
-            <br></br>
+
             <p>
-                user@NEULAND:~$ ./ctf-2021 -sponsoren
+                admin@NEULAND:~$ ./ctf-2021 -sponsoren
                 <br></br>
-                Alle THI Studenten sind herzlich eingelanden, es können bis zu 40 Personen teilnehmen. Teams sind
-                erlaubt qulaifizieren sich jedoch nicht für das gewinnen von Preisen.
+                Folgen bald.
             </p>
-            <br></br>
+
             <p>
-                user@NEULAND:~$ ./ctf-2021 -anmeldung
+                admin@NEULAND:~$ ./ctf-2021 -anmeldung
                 <br></br>
                 <Form method="post" action="api/submit">
                     <Form.Group className="mb-3">
@@ -94,9 +95,12 @@ export default function Home ({ hCaptchaSiteKey }) {
                             onVerify={() => setVerified(true)}
                         />
                     </Form.Group>
-                    <Button variant="primary" type="submit" disabled={!verified}>Absenden</Button>
+                    <br></br>
+                    <Button variant="primary" type="submit" disabled={!verified} className="absend">Absenden</Button>
                 </Form>
             </p>
+            <br></br>
+            <br></br>
             <Footer/>
         </Container>
   )

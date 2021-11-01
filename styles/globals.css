@@ -6,9 +6,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-    color: inherit;
+a, a:hover {
     text-decoration: none;
+    color: #00fe1d !important;
 }
 
 * {
@@ -17,13 +17,23 @@ a {
 
 .container {
     max-width: 1000px;
-}
-
-.img {
-    text-align: center;
+    color: #00fe1d;
 }
 
 h1 {
     font-size: 20pt;
     text-align: center;
 }
+
+.impress {
+    text-align: center;
+    color: #00fe1d;
+}
+
+.btn-primary.disabled, .btn-primary:disabled, .btn-primary, .btn {
+    color: black !important;
+    background-color: #00fe1d !important;
+    border-color: #00fe1d !important;
+}
+
+

@@ -14,7 +14,9 @@ export default function Header () {
         <meta property="og:url" content="https://ctf.neuland-ingolstadt.de/" />
         <meta property="og:image" content="https://ctf.neuland-ingolstadt.de/logo.png" />
       </Head>
-      <img src="/logo.png" width="40%" className="mb-3 center"/>
+        <center>
+      <img src="/logo.png" width="40%" className="mb-3 neulandLogo"/>
+        </center>
     </>
   )
 }

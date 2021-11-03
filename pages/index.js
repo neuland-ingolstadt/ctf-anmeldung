@@ -19,6 +19,19 @@ export async function getServerSideProps (ctx) {
 export default function Home ({ hCaptchaSiteKey }) {
   const [verified, setVerified] = useState(false)
 
+  function genTitle (label) {
+    return (
+        <h4>
+            <span className={styles.promptWhite}>root</span>
+            <span className={styles.promptGrey}>@</span>
+            <span className={styles.promptWhite}>NEULAND</span>
+            <span className={styles.promptGrey}>:~#</span>
+            <span className={styles.promptWhite}>{' '}./ctf-2021{' '}</span>
+            <span className={styles.promptRed}>--{label}</span>
+        </h4>
+    )
+  }
+
   return (
         <Container className={[styles.container, 'p-3']}>
 
@@ -26,44 +39,32 @@ export default function Home ({ hCaptchaSiteKey }) {
             <br></br>
             <br></br>
             <p>
-                admin@NEULAND:~$ ./ctf-2021 -info
-                <br></br>
-                Capture the Flag ist ein Wettbewerb, bei dem man legal hacken kann, du wirst Aufgaben in der Kategorien
-                web, stego, forensic, crypto, osint, re und pwn lösen.
-                Für jeden richtigen Hack gibt es eine Flagge, die dir Punkte und einen Platz auf dem Scoreboard sichert.
-                Hierfür benötigt ihr keine Vorkenntnisse, der CTF beinhaltet Aufgaben für alle Erfahrungsgerade.
+                {genTitle('info')}
+                Capture the Flag ist ein Wettbewerb, bei dem man legal hacken kann. Es wird Aufgaben in der Kategorien
+                web, stego, forensic, crypto, osint, re und pwn zu lösen geben.
+                Für jeden richtigen Hack erhält man eine Flagge, die Punkte und einen Platz auf dem Scoreboard sichern.
+                Hierfür benötigt man keine Vorkenntnisse, der CTF beinhaltet Aufgaben für alle Erfahrungsgerade.
                 Neben dem Kennenlernen von Studierenden mit gleichen Interessen und dem Spaß beim Rätsel lösen gibt
-                es natürlich auch kostenloses Essen/Trinken und Preise für die besten Hacker.
+                es natürlich auch Verpflegung und Preise für die besten Hacker.
             </p>
 
             <p>
-                admin@NEULAND:~$ ./ctf-2021 -wann
-                <br></br>
-                Am 11.12.2021 von 10 bis 18 Uhr.
+                {genTitle('daten')}
+                <b>Datum</b>: 11.12.2021<br />
+                <b>Uhrzeit</b>: 10 bis 18 Uhr<br />
+                <b>Ort</b>: Raum G105 in der Technische Hochschule Ingolstadt<br />
+                <b>Teilnehmer</b>: maximal 40<br />
+                <b>Teams</b>: sind erlaubt, aber ohne Wertung<br />
+                <b>Preise</b>: Hack the Box Gift Cards<br />
             </p>
 
             <p>
-                admin@NEULAND:~$ ./ctf-2021 -wo
-                <br></br>
-                An der Technische Hochschule Ingolstadt im Raum G105.
-            </p>
-
-            <p>
-                admin@NEULAND:~$ ./ctf-2021 -wer
-                <br></br>
-                Alle THI Studenten sind herzlich eingeladen, es können bis zu 40 Personen teilnehmen. Teams sind
-                erlaubt qualifizieren sich jedoch nicht für das Gewinnen von Preisen.
-            </p>
-
-            <p>
-                admin@NEULAND:~$ ./ctf-2021 -sponsoren
-                <br></br>
+                {genTitle('sponsoren')}
                 Folgen bald.
             </p>
 
             <p>
-                admin@NEULAND:~$ ./ctf-2021 -anmeldung
-                <br></br>
+                {genTitle('anmeldung')}
                 <Form method="post" action="api/submit">
                     <Form.Group className="mb-3">
                         <Form.Label>Name / Nickname</Form.Label>

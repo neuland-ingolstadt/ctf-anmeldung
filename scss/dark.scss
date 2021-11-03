@@ -3,7 +3,7 @@
 // file rogue-thi-app/scss/themes/dark.scss
 //
 
-$neuland-color: #8845ef;
+$ctf-color: #00fe1d;
 
 // taken from https://github.com/ForEvolve/bootstrap-dark/
 
@@ -36,7 +36,7 @@ $green: darken(#28a745, $color-darker-percent-none);
 $teal: darken(#20c997, $color-darker-percent-none);
 $cyan: lighten(#17a2b8, $color-darker-percent-none);
 
-$primary: $neuland-color;
+$primary: $ctf-color;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
@@ -48,14 +48,14 @@ $dark: $gray-800;
 //$body-bg: $gray-900; //#1E1E1E;
 //$body-bg: #191d21;
 $body-bg: #202020;
-$body-color: #DFE5F2; // #d3d3d3; //$gray-200; //#D4D4D4;
+$body-color: #00fe1d; // #d3d3d3; //$gray-200; //#D4D4D4;
 
 $yiq-text-dark: $gray-900;
 $yiq-text-light: $gray-400;
 
-$link-color: $neuland-color;
+$link-color: $ctf-color;
 //$link-decoration: none;
-$link-hover-color: $neuland-color;
+$link-hover-color: $ctf-color;
 //$link-hover-decoration: underline;
 
 
@@ -211,7 +211,7 @@ pre {
 
 // use our CI color
 $theme-colors: (
-  "primary": $neuland-color
+  "primary": $ctf-color
 );
 
 @import "../node_modules/bootstrap/scss/bootstrap";

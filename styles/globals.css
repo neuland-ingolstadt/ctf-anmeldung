@@ -8,7 +8,6 @@ body {
 
 a, a:hover {
     text-decoration: none;
-    color: #00fe1d !important;
 }
 
 * {
@@ -17,7 +16,6 @@ a, a:hover {
 
 .container {
     max-width: 1000px;
-    color: #00fe1d;
 }
 
 h1 {
@@ -27,13 +25,4 @@ h1 {
 
 .impress {
     text-align: center;
-    color: #00fe1d;
 }
-
-.btn-primary.disabled, .btn-primary:disabled, .btn-primary, .btn {
-    color: black !important;
-    background-color: #00fe1d !important;
-    border-color: #00fe1d !important;
-}
-
-

@@ -56,7 +56,8 @@ export default function Home ({ hCaptchaSiteKey }) {
         <b>Place</b>: Technische Hochschule Ingolstadt in room G105<br/>
         <b>Prizes</b>: 1st place: 500€, 2nd and 3rd place: Hack the Box credits (teams are allowed, but prizes are only available
         for the best three lone fighters)<br/>
-        <b>Corona</b>: Please note that this event will be held with a 3G+ concept! <br/>
+        <b>Corona</b>: Please note that this event will be held with a 3G+ concept!
+        Make sure to bring your vaccination certificate and/or a recent PCR-Test<br/>
       </p><br/>
 
       <p>

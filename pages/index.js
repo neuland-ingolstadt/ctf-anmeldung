@@ -117,6 +117,14 @@ export default function Home ({ hCaptchaSiteKey }) {
               <option value="4XL">4XL</option>
             </Form.Select>
           </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>COVID-19:</Form.Label>
+            <Form.Check
+              type="checkbox"
+              name="covid19"
+              label="I am vaccinated and/or will bring a fresh PCR-Test."
+              />
+          </Form.Group>
           <Form.Group>
             <HCaptcha
               sitekey={hCaptchaSiteKey}

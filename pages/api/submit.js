@@ -24,6 +24,8 @@ E-Mail: ${form.email}
 Studiengang: ${form.course}
 
 T-Shirt Größe: ${form.shirt}
+
+COVID19: ${form.covid19}
 `
 }
 

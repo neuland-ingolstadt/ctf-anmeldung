@@ -9,21 +9,22 @@ export default function Error () {
 
   return (
     <Container className="p-3">
-      <Header />
-        <br></br>
-        <br></br>
+      <Header/>
+      <br></br>
+      <br></br>
       <p>
-        Uff, es ist ein Fehler aufgetreten.
+        Uff, an error has occurred.
       </p>
       <p>
-          Bitte versuche dich erneut anzumelden, sollte es sich um eine dauerhafte Störung handeln sind wir unter <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a> erreichbar.
+        Please try to log in again, if it is a permanent malfunction we can be reached at <a
+        href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>.
       </p>
       <p>
         {router.query.message}
       </p>
-        <br></br>
-        <br></br>
-      <Footer />
+      <br></br>
+      <br></br>
+      <Footer/>
     </Container>
   )
 }

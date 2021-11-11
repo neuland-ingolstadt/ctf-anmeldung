@@ -40,69 +40,82 @@ export default function Home ({ hCaptchaSiteKey }) {
       <br></br>
       <p>
         {genTitle('info')}
-        Capture the Flag ist ein Wettbewerb, bei dem man legal hacken kann. Es wird Aufgaben in der Kategorien
-        web, stego, forensic, crypto, osint, re und pwn zu lösen geben.
-        Für jeden richtigen Hack erhält man eine Flagge, die Punkte und einen Platz auf dem Scoreboard sichern.
-        Hierfür benötigt man keine Vorkenntnisse, der CTF beinhaltet Aufgaben für alle Erfahrungsgerade.
-        Neben dem Kennenlernen von Studierenden mit gleichen Interessen und dem Spaß beim Rätsel lösen gibt
-        es natürlich auch Verpflegung und Preise für die besten Hacker.
-      </p>
+        Capture the Flag is a competition where you can legally hack, you will solve tasks in the categories web,
+        stego, forensic, crypto, osint, re and pwn.
+        For every hack, there is a flag that secures you points and a place on the scoreboard.
+        You do not need any previous knowledge, the CTF includes tasks for all levels of experience.
+        In addition to getting to know students with the same interests and having fun solving puzzles, there is of
+        course also free food/drinks and prizes for the best hackers.
+      </p><br/>
 
       <p>
-        {genTitle('daten')}
-        <b>Datum</b>: 11.12.2021<br />
-        <b>Uhrzeit</b>: 10 bis 18 Uhr<br />
-        <b>Ort</b>: Raum G105 in der Technische Hochschule Ingolstadt<br />
-        <b>Teilnehmer</b>: maximal 40<br />
-        <b>Teams</b>: sind erlaubt, aber ohne Wertung<br />
-        <b>Preise</b>: Hack the Box Gift Cards<br />
-      </p>
+        {genTitle('data')}
+        <b>Date</b>: 11.12.2021<br/>
+        <b>Time</b>: Flags can be handed in from 10 a.m. to 6 p.m. after which a get-together with snacks is
+        planned.<br/>
+        <b>Place</b>: Technische Hochschule Ingolstadt in room G105<br/>
+        <b>Prizes</b>: 1 place: 500€ 2/3 place: Hack the Box credits (teams are allowed, but prizes are only available
+        for the best three lone fighters)<br/>
+        <b>Corona</b>: Please note that this event will be held with a 3G+ concept! <br/>
+      </p><br/>
 
       <p>
-        {genTitle('sponsoren')}
-        Folgen bald.
+        {genTitle('sponsors')}
+        <p>
+          <b>- Main sponsor: Response (https://www.respon.se/)</b><br/>
+          - STRACT ()<br/>
+          - Securai (https://www.securai.de/) </p>
       </p>
+      <br/>
 
       <p>
-        {genTitle('anmeldung')}
+        {genTitle('registration')}
         <Form method="post" action="api/submit">
           <Form.Group className="mb-3">
             <Form.Label>Name / Nickname</Form.Label>
             <Form.Control
-                name="name"
-                type="text"
-                required
+              name="name"
+              type="text"
+              required
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>E-Mail-Adresse:</Form.Label>
+            <Form.Label>E-mail address:</Form.Label>
             <Form.Control
-                name="email"
-                type="email"
-                required
+              name="email"
+              type="email"
+              required
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Studiengang:</Form.Label>
+            <Form.Label>Course:</Form.Label>
             <Form.Control
-                name="course"
-                type="text"
-                placeholder="Informatik 3. Semester, Bachelorand Künstliche Intelligenz, ..."
+              name="course"
+              type="text"
+              placeholder="Computer Science 3rd semester, Bachelor's degree in Artificial Intelligence,..."
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>T-Shirt Size:</Form.Label>
+            <Form.Control
+              name="shirt"
+              type="text"
+              placeholder="S,M,L, ..."
             />
           </Form.Group>
           <Form.Group>
             <HCaptcha
-                sitekey={hCaptchaSiteKey}
-                onVerify={() => setVerified(true)}
+              sitekey={hCaptchaSiteKey}
+              onVerify={() => setVerified(true)}
             />
           </Form.Group>
           <br></br>
-          <Button variant="primary" type="submit" disabled={!verified} className="absend">Absenden</Button>
+          <Button variant="primary" type="submit" disabled={!verified} className="absend">Send</Button>
         </Form>
       </p>
       <br></br>
       <br></br>
-      <Footer />
+      <Footer/>
     </Container>
   )
 }

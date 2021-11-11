@@ -6,19 +6,20 @@ import Footer from '../components/Footer'
 export default function Done () {
   return (
     <Container className="p-3">
-      <Header />
-        <br></br>
-        <br></br>
+      <Header/>
+      <br></br>
+      <br></br>
       <p>
-        Deine Anmeldung ist eingegangen. 😊
+        Your registration has been received. 😊
       </p>
       <p>
-          Du erhältst in Kürze eine Bestätigungs-E-Mail.
-          Wir stehen dir gerne für Fragen oder Anliegen unter <a href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a> zur Verfügung.
+        You will receive a confirmation email shortly.
+        We are at your disposal for questions or concerns under <a
+        href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>.
       </p>
-        <br></br>
-        <br></br>
-      <Footer />
+      <br></br>
+      <br></br>
+      <Footer/>
     </Container>
   )
 }

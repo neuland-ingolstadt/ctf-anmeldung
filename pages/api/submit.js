@@ -22,6 +22,8 @@ Name: ${form.name}
 E-Mail: ${form.email}
 
 Studiengang: ${form.course}
+
+T-Shirt Größe: ${form.shirt}
 `
 }
 

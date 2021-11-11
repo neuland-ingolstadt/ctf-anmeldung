@@ -106,11 +106,16 @@ export default function Home ({ hCaptchaSiteKey }) {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>T-Shirt Size:</Form.Label>
-            <Form.Control
-              name="shirt"
-              type="text"
-              placeholder="S, M, L, XL, ..."
-            />
+            <Form.Select aria-label="T-Shirt Size" name="shirt">
+              <option>None selected</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+              <option value="3XL">3XL</option>
+              <option value="4XL">4XL</option>
+            </Form.Select>
           </Form.Group>
           <Form.Group>
             <HCaptcha

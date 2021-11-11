@@ -35,7 +35,7 @@ export default function Home ({ hCaptchaSiteKey }) {
   return (
     <Container className={[styles.container, 'p-3']}>
 
-      <Header/>
+      <Header />
       <br></br>
       <br></br>
       <p>
@@ -54,19 +54,28 @@ export default function Home ({ hCaptchaSiteKey }) {
         <b>Time</b>: Flags can be handed in from 10 a.m. to 6 p.m. after which a get-together with snacks is
         planned.<br/>
         <b>Place</b>: Technische Hochschule Ingolstadt in room G105<br/>
-        <b>Prizes</b>: 1 place: 500€ 2/3 place: Hack the Box credits (teams are allowed, but prizes are only available
+        <b>Prizes</b>: 1st place: 500€, 2nd and 3rd place: Hack the Box credits (teams are allowed, but prizes are only available
         for the best three lone fighters)<br/>
         <b>Corona</b>: Please note that this event will be held with a 3G+ concept! <br/>
       </p><br/>
 
       <p>
-        {genTitle('sponsors')}
-        <p>
-          <b>- Main sponsor: Response (https://www.respon.se/)</b><br/>
-          - STRACT ()<br/>
-          - Securai (https://www.securai.de/) </p>
+        {genTitle('main-sponsor')}
+        <a href="https://www.respon.se/">
+          <img src="/sponsor-response.svg" className="main-sponsor" />
+        </a>
       </p>
-      <br/>
+
+      <p>
+        {genTitle('other-sponsors')}
+        <img src="/sponsor-stract.svg" className="sponsor" />
+        <a href="https://www.securai.de/">
+          <img src="/sponsor-securai.svg" className="sponsor" />
+        </a>
+        <a href="https://loew-sailer.de/">
+          <img src="/sponsor-lus.svg" className="sponsor" />
+        </a>
+      </p><br/>
 
       <p>
         {genTitle('registration')}
@@ -88,7 +97,7 @@ export default function Home ({ hCaptchaSiteKey }) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Course:</Form.Label>
+            <Form.Label>Course: (optional)</Form.Label>
             <Form.Control
               name="course"
               type="text"
@@ -100,7 +109,7 @@ export default function Home ({ hCaptchaSiteKey }) {
             <Form.Control
               name="shirt"
               type="text"
-              placeholder="S,M,L, ..."
+              placeholder="S, M, L, XL, ..."
             />
           </Form.Group>
           <Form.Group>

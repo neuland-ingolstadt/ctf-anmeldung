@@ -5,7 +5,7 @@ export default function Header () {
   return (
     <>
       <Head>
-        <title>Neuland CTF 2021</title>
+        <title>Neuland CTF 2022</title>
         <meta name="description" content="Neuland CTF 2022" />
         <link rel="icon" type="image/svg+xml" href="icon.png" />
 

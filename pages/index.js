@@ -23,9 +23,9 @@ export default function Home ({ hCaptchaSiteKey }) {
     return (
       <h4>
         <span className={styles.promptWhite}>root</span>
-        <span className={styles.promptWhite}>@</span>
+        <span className={styles.promptGrey}>@</span>
         <span className={styles.promptWhite}>NEULAND</span>
-        <span className={styles.promptWhite}>:~#</span>
+        <span className={styles.promptGrey}>:~#</span>
         <span className={styles.promptWhite}>{' '}./ctf-2022{' '}</span>
         <span className={styles.promptGrey}>--{label}</span>
       </h4>

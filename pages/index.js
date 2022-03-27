@@ -53,7 +53,7 @@ export default function Home ({ hCaptchaSiteKey }) {
         <b>Date</b>: 02.04.2022<br/>
         <b>Time</b>: Flags can be handed in from 10 a.m. to 6 p.m. after which a get-together with snacks is
         planned.<br/>
-        <b>Place</b>: Technische Hochschule Ingolstadt in room G107<br/>
+        <b>Place</b>: Technische Hochschule Ingolstadt in room G215<br/>
         <b>Prizes</b>: 1st place: 500€, 2nd and 3rd place: Hack the Box credits (teams are allowed, but prizes are only available
         for the best three lone fighters)<br/>
         <b>Corona</b>: Please note that this event will be held with a 2G concept!

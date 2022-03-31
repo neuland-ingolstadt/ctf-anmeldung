@@ -44,3 +44,9 @@ h1 {
         margin-right: 30px;
     }
 }
+
+.abmelden {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -19,7 +19,7 @@ export default function Home () {
             window.location.href.replace('abmeldung', 'confirm-abmeldung')
           )}
         >
-          I will not make it to the event :(
+          Click here if you will not make it to the event :(
         </Button>
       </p>
       <Footer/>

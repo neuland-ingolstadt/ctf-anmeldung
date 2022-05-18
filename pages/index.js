@@ -52,7 +52,13 @@ export default function Home() {
         <b>Date</b>: 02.04.2022<br />
         <b>Time</b>: 10 a.m. to 6 p.m. with a get-togther afterwards<br />
         <b>Place</b>: Technische Hochschule Ingolstadt<br />
-        <b>Participants</b>: 35 <br />
+        <br />
+
+        <b>Participants</b>: 40 <br />
+        <b>Writeup</b>: <a href="https://blog.neuland-ingolstadt.de/posts/neuland-ctf-04-2022/">Blogpost</a> <br />
+        <b>Challenge Repository</b>: <a href="https://github.com/neuland-ingolstadt/Neuland-CTF-2022">GitHub</a> <br />
+        <br />
+
         <b>Prizes and Winners</b>:
         <table class="table">
           <tbody>

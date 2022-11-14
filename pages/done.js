@@ -13,7 +13,8 @@ export default function Done () {
         Your registration has been received. 😊
       </p>
       <p>
-        You will receive a confirmation email shortly.
+        You will not receive a confirmation email immediately. Thank you for your patience.<br/>
+        We will accept or deny your registration no later than one week before the event.<br/>
         We are at your disposal for questions or concerns under <a
         href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>.
       </p>

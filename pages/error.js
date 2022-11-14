@@ -16,7 +16,7 @@ export default function Error () {
         Uff, an error has occurred.
       </p>
       <p>
-        Please try to register yourself again, if it is a permanent malfunction we can be reached at <a
+        Please try to register yourself again! If it is a permanent malfunction, we can be reached at <a
         href="mailto:ctf@neuland-ingolstadt.de">ctf@neuland-ingolstadt.de</a>.
       </p>
       <p>

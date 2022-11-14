@@ -101,17 +101,17 @@ export default function Home ({ hCaptchaSiteKey }) {
         </a>
 
         <a href="https://www.donat-it.de/">
-            <img src="/donat_it-logo.svg" className="sponsor_donat_it sponsor" />
+          <img src="/donat_it-logo.svg" className="sponsor_donat_it sponsor" />
         </a>
         <span className="inline_design">
           <a href="https://www.efs-auto.com/">
             <img src="/efs-logo.svg" className="sponsor_efs sponsor" />
           </a>
-            <a href="https://www.securai.de/">
-              <img src="/securai-logo.svg" className="sponsor_securai sponsor" />
-            </a>
+          <a href="https://www.securai.de/">
+            <img src="/securai-logo.svg" className="sponsor_securai sponsor" />
+          </a>
           <a href="https://cognizant-mobility.com/">
-              <img src="/cognizant_mobility-logo.png" className="sponsor_cognizant_mobility sponsor" />
+            <img src="/cognizant_mobility-logo.png" className="sponsor_cognizant_mobility sponsor" />
           </a>
         </span>
       </p><br/>

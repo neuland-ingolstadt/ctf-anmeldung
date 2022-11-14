@@ -41,17 +41,15 @@ export default function Home ({ hCaptchaSiteKey }) {
 
       <p>
         {genTitle('info')}
-        Capture The Flag is a competition where you can legally hack and exploit intentionally
-        vulnerable programs or websites.
-        You will solve tasks in the categories web, steganography, forensics, cryptography, osint
-        (open source intelligence), reverse engineering, pwn/binary exploitation and miscellaneous tasks.
-        <br/>
-        For every hack, there is a flag that secures you points and a place on the scoreboard.
-        You do not need any previous knowledge, the CTF includes tasks for all levels of experience.
+        Capture The Flag is a competition where you can legally hack and exploit intentionally vulnerable programs or
+        websites. You will solve tasks in the categories web, steganography, forensics, cryptography, osint (open source
+        intelligence), reverse engineering, pwn/binary exploitation and miscellaneous tasks. For every hack, there is a
+        flag that secures you points and a place on the scoreboard. You do not need any previous knowledge, the CTF
+        includes tasks for all levels of experience.
         <br/>
         In addition to getting to know students with the same interests and having fun solving
         puzzles, there is of course also free food (lunch & dinner) + drinks and prizes for the best hackers. Every
-        participant will be rewarded with a some merch and a Neuland CTF T-Shirt after the event. We will allow a
+        participant will be rewarded with some merch and a Neuland CTF T-Shirt after the event. We will allow a
         maximum of 40 participants, so make sure to secure yourself a spot quickly.
       </p><br/>
 

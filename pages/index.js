@@ -118,61 +118,8 @@ export default function Home ({ hCaptchaSiteKey }) {
 
       <p>
         {genTitle('registration')}
-        <Form method="post" action="api/submit">
-          <Form.Group className="mb-3">
-            <Form.Label>Name:</Form.Label>
-            <Form.Control
-              name="name"
-              type="text"
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Email address:</Form.Label>
-            <Form.Control
-              name="email"
-              type="email"
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Course:</Form.Label>
-            <Form.Control
-              name="course"
-              type="text"
-              placeholder="Computer Science 3rd semester bachelor, ..."
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>T-Shirt size (unisex):</Form.Label>
-            <Form.Select aria-label="T-Shirt size" name="shirt">
-              <option>None selected</option>
-              <option value="XXS">XXS</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
-              <option value="3XL">3XL</option>
-              <option value="4XL">4XL</option>
-              <option value="5XL">5XL</option>
-            </Form.Select>
-          </Form.Group>
-          <center>
-            <Form.Group>
-              <HCaptcha
-                sitekey={hCaptchaSiteKey}
-                onVerify={() => setVerified(true)}
-              />
-            </Form.Group>
-          </center>
-          <br></br>
-          <center>
-            <Button variant="primary" type="submit" disabled={!verified} className="absend">Send</Button>
-          </center>
-        </Form>
+        The registration is closed.
+        Please come back next semester!
       </p>
       <br></br>
       <Footer/>

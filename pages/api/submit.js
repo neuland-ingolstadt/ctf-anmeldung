@@ -17,13 +17,8 @@ function getSubject (form) {
 function getBody (form) {
   return `Es ist eine neue Anmeldung eingegangen
 
-Name: ${form.name}
-
-E-Mail: ${form.email}
-
-Studiengang: ${form.course}
-
-T-Shirt Größe: ${form.shirt}
+Name:\tE-Mail:\tStudiengang:\tT-Shirt Größe:
+${form.name}\t${form.email}\t${form.course}\t${form.shirt}
 `
 }
 
@@ -63,9 +58,9 @@ export default async (req, res) => {
       subject: getSubject(form),
       text: getBody(form)
     })
-    res.redirect('../done')
+    res.redirect(302, '../done')
   } catch (e) {
     console.error(e)
-    res.redirect('../error?message=' + encodeURIComponent(e.message))
+    res.redirect(302, '../error?message=' + encodeURIComponent(e.message))
   }
 }

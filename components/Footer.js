@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function Footer () {
   return (
-    <p className="text-muted mt-3">
+    <div className="text-muted mt-3">
+      <center>
         <small>
-            <center>
-           <a href="https://neuland-ingolstadt.de/impressum.htm" target="_blank" rel="noreferrer" className="impress">Impressum und Datenschutz</a>
-            </center>
+          <a href="https://neuland-ingolstadt.de/impressum.htm" target="_blank" rel="noreferrer" className="impress">Imprint & Privacy Policy</a>
         </small>
-    </p>
+      </center>
+    </div>
   )
 }

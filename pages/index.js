@@ -26,7 +26,7 @@ export default function Home ({ hCaptchaSiteKey }) {
         <span className={styles.promptGrey}>@</span>
         <span className={styles.promptWhite}>NEULAND</span>
         <span className={styles.promptGrey}>:~#</span>
-        <span className={styles.promptWhite}>{' '}./ctf-2022{' '}</span>
+        <span className={styles.promptWhite}>{' '}./ctf-2023{' '}</span>
         <span className={styles.promptGrey}>--{label}</span>
       </h4>
     )
@@ -39,10 +39,10 @@ export default function Home ({ hCaptchaSiteKey }) {
       <br></br>
       <br></br>
 
-      <p>
-        {genTitle('info')}
+      {genTitle('info')}
+      <div>
         Capture The Flag is a competition where you can legally hack and exploit intentionally vulnerable programs or
-        websites. You will solve tasks in the categories web, steganography, forensics, cryptography, osint (open source
+        websites. You will solve tasks in the categories web, steganography, blue team, cryptography, osint (open source
         intelligence), reverse engineering, pwn/binary exploitation and miscellaneous tasks. For every hack, there is a
         flag that secures you points and a place on the scoreboard. You do not need any previous knowledge, the CTF
         includes tasks for all levels of experience.
@@ -50,14 +50,15 @@ export default function Home ({ hCaptchaSiteKey }) {
         In addition to getting to know students with the same interests and having fun solving
         puzzles, there is of course also free food (lunch & dinner) + drinks and prizes for the best hackers. Every
         participant will be rewarded with some merch and a Neuland CTF T-Shirt after the event. We will allow a
-        maximum of 40 participants, so make sure to secure yourself a spot quickly.
-      </p><br/>
+        maximum of 45 participants, so make sure to secure yourself a spot quickly.
+      </div><br/>
 
-      <p>
-        {genTitle('data')}
-        <b>Date</b>: 03.12.2022<br/>
+      {genTitle('data')}
+      <div>
+        <b>Date</b>: 09.12.2023<br/>
         <b>Time schedule</b>:
           <table>
+            <tbody>
               <tr>
                 <td className="td-1">10:30 a.m. - 11:00 a.m.</td>
                 <td className="td-2">Opening and introduction</td>
@@ -70,57 +71,123 @@ export default function Home ({ hCaptchaSiteKey }) {
                 <td className="td-1">07:00 p.m. - 09:00 p.m.</td>
                 <td className="td-2">Get together</td>
               </tr>
+            </tbody>
           </table>
         <b>Place</b>: Technische Hochschule Ingolstadt in room G215<br/>
         <b>Team size</b>: 1 - 3 team members<br/>
         <b>Prizes</b>:
           <table>
-            <tr>
-              <td className="td-1">1st team</td>
-              <td className="td-2">300 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">2nd team</td>
-              <td className="td-2">200 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">3rd team</td>
-              <td className="td-2">100 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">4th - 8th team</td>
-              <td className="td-2">15 € voucher for each team member</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className="td-1">1st team</td>
+                <td className="td-2">250 €</td>
+              </tr>
+              <tr>
+                <td className="td-1">2nd team</td>
+                <td className="td-2">150 €</td>
+              </tr>
+              <tr>
+                <td className="td-1">3rd team</td>
+                <td className="td-2">100 €</td>
+              </tr>
+              <tr>
+                <td className="td-1">4th & 5th team</td>
+                <td className="td-2">15 € voucher for each team member</td>
+              </tr>
+            </tbody>
           </table>
-      </p><br/>
+      </div><br/>
 
-      <p>
-        {genTitle('sponsors')}
-        <a href="https://cariad.technology/">
-          <img src="/cariad-logo.svg" className="sponsor_cariad sponsor" />
-        </a>
-
-        <a href="https://www.donat-it.de/">
-          <img src="/donat_it-logo.svg" className="sponsor_donat_it sponsor" />
-        </a>
+      {genTitle('sponsors')}
+      <div>
         <span className="inline_design">
-          <a href="https://www.efs-auto.com/">
-            <img src="/efs-logo.svg" className="sponsor_efs sponsor" />
+          <a href="https://www.mbda-deutschland.de/">
+            <img src="/mbda-logo.svg" alt="MBDA logo" className="sponsor_mbda sponsor" />
           </a>
           <a href="https://www.securai.de/">
-            <img src="/securai-logo.svg" className="sponsor_securai sponsor" />
-          </a>
-          <a href="https://cognizant-mobility.com/">
-            <img src="/cognizant_mobility-logo.png" className="sponsor_cognizant_mobility sponsor" />
+            <img src="/securai-logo.png" alt="Securai logo" className="sponsor_securai sponsor" />
           </a>
         </span>
-      </p><br/>
 
-      <p>
-        {genTitle('registration')}
-        The registration is closed.
-        Please come back next semester!
-      </p>
+        <span className="inline_design">
+          <a href="https://www.isecng.de/">
+            <img src="/isecng-logo.svg" alt="iSecNG logo" className="sponsor_isecng sponsor" />
+          </a>
+          <a href="https://www.donat-it.de/">
+            <img src="/donat_it-logo.svg" alt="Donat IT logo" className="sponsor_donat_it sponsor" />
+          </a>
+        </span>
+      </div><br/>
+
+      {genTitle('registration')}
+      <div>
+        You can register for the event with the following form. The number of spots is limited. We will get back to you
+        not later than 4 days before the event to confirm or decline your registration.<br/>
+        The event is intended for the students at Technische Hochschule Ingolstadt. Therefore, these registrations will
+        be accepted preferably.<br/>
+        <br/>
+        <Form method="post" action="api/submit">
+          <Form.Group className="mb-3">
+            <Form.Label>Name <sup>*</sup></Form.Label>
+            <Form.Control
+              name="name"
+              type="text"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Email address <sup>*</sup></Form.Label>
+            <Form.Control
+              name="email"
+              type="email"
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Course of study <sup>*</sup></Form.Label>
+            <Form.Control
+              name="course"
+              type="text"
+              placeholder="Computer Science 3rd semester bachelor, ..."
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>T-Shirt size (unisex)</Form.Label>
+            <Form.Select aria-label="T-Shirt size" name="shirt">
+              <option>None selected</option>
+              <option value="XXS">XXS</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+              <option value="3XL">3XL</option>
+              <option value="4XL">4XL</option>
+              <option value="5XL">5XL</option>
+            </Form.Select>
+          </Form.Group>
+          <br/>
+          <p>
+            The above data is required for the planning and execution of the Neuland CTF. Photographs will also be taken at the
+            event. Further information on data processing can be found in the <a href="/privacy_policy.pdf" target="_blank" rel="noreferrer">privacy policy</a>.
+          </p>
+          <br/>
+          <center>
+            <Form.Group>
+              <HCaptcha
+                sitekey={hCaptchaSiteKey}
+                onVerify={() => setVerified(true)}
+              />
+            </Form.Group>
+          </center>
+          <br></br>
+          <center>
+            <Button variant="primary" type="submit" disabled={!verified} className="absend">Send</Button>
+          </center>
+        </Form>
+      </div>
       <br></br>
       <Footer/>
     </Container>

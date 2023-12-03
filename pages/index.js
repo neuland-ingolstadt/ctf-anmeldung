@@ -123,8 +123,7 @@ export default function Home ({ hCaptchaSiteKey }) {
       <div>
           <p>
             The registration for the event is now closed. All available spots have been allocated.
-            Everyone who registered for the event received an email with either the acceptance or the rejection for the event.
-            Some people have been placed on the waitlist in case someone else cancels.<br/><br/>
+            <br/><br/>
             Information on data processing can be found in the <a href="/privacy_policy.pdf" target="_blank" rel="noreferrer">privacy policy</a> of the event.
           </p>
       </div>

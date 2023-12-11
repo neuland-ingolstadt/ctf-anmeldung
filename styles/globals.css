@@ -45,11 +45,6 @@ td {
     width: auto;
 }
 
-.td-3 {
-    padding-left: 15px;
-    width: auto;
-}
-
 table td, table th {
     border: 1px solid grey;
 }
@@ -80,33 +75,29 @@ table tr td:last-child {
     display: block;
     width: auto;
     height: auto;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 40px auto;
 }
 
-.sponsor_cariad {
-    height: 2.5rem;
-    margin-top: 25px;
-    margin-bottom: 50px;
-}
-
-.sponsor_donat_it {
-    height: 4.5rem;
-    margin-bottom: 50px;
+.sponsor_mbda {
+    height: 2.1rem;
+    margin-top: 30px;
 }
 
 .sponsor_securai {
-    height: 2.5rem;
+    height: 3.5rem;
+    margin-bottom: 75px;
 }
 
-.sponsor_efs {
-    height: 2.75rem;
+.sponsor_isecng {
+    height: 2.15rem;
 }
 
-.sponsor_cognizant_mobility {
-    height: 2rem;
+.sponsor_donat_it {
+    height: 4.8rem;
+    margin-bottom: 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     table {
         border-collapse: collapse;
         width: 60%;
@@ -124,11 +115,6 @@ table tr td:last-child {
         width: auto;
     }
 
-    .td-3 {
-        padding: 0 0 0 3%;
-        width: auto;
-    }
-
     .logo {
         max-height: 7.5rem;
     }
@@ -141,38 +127,33 @@ table tr td:last-child {
         margin: 0 auto 20px auto;
     }
 
-    .sponsor_cariad {
-        height: 3.5rem;
-        margin-top: 2.5%;
-        margin-bottom: 4%;
-    }
-
-    .sponsor_donat_it {
-        height: 6.25rem;
-        margin-bottom: 4%;
-    }
-
     .inline_design {
         display: block;
         text-align: center;
         margin: 0 auto 0 auto;
     }
 
+    .sponsor_mbda {
+        display: inline;
+        height: 2.4rem;
+        margin: 2.45% 5% 3% 11%;
+    }
+
     .sponsor_securai {
         display: inline;
-        margin: 10px 5% 20px 5%;
-        height: 3.75rem;
+        height: 4.5rem;
+        margin: 2.5% 9% 3% 2%;
     }
 
-    .sponsor_efs {
+    .sponsor_isecng {
         display: inline;
-        margin: 10px 5% 20px 5%;
-        height: 4rem;
+        height: 2.25rem;
+        margin: 5.0% 3.5% 2% 5%;
     }
 
-    .sponsor_cognizant_mobility {
+    .sponsor_donat_it {
         display: inline;
-        margin: 0 5%;
-        height: 3rem;
+        height: 5.5rem;
+        margin: 1.0% 5% 2% 3.5%;
     }
 }

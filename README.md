@@ -1,3 +1,3 @@
 # CTF Information Page
 
-Information page about the last Neuland CTF in Winter 2022
+Information page about the last Neuland CTF in December 2023

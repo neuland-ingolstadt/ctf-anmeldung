@@ -15,11 +15,9 @@ import Header from '../components/Header'
 import SignUpForm from '../components/SignUpForm'
 import Title from '../components/Title'
 
-const registrationEnabled =
-  process.env.NEXT_PUBLIC_ENABLE_REGISTRATION === 'true'
-
 interface HomeProps {
   hCaptchaSiteKey: string
+  registrationEnabled: boolean
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (
@@ -28,11 +26,15 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
   return {
     props: {
       hCaptchaSiteKey: process.env.HCAPTCHA_SITEKEY || '',
+      registrationEnabled: process.env.ENABLE_REGISTRATION === 'true',
     },
   }
 }
 
-export default function Home({ hCaptchaSiteKey }: HomeProps) {
+export default function Home({
+  hCaptchaSiteKey,
+  registrationEnabled,
+}: HomeProps) {
   return (
     <div className="container mx-auto max-w-4xl p-3">
       <Header />

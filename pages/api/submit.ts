@@ -7,8 +7,7 @@ import CTFSignupNotificationEmail from '@/mail/signUpNotification'
 
 const mailTo = process.env.MAIL_TO || ''
 
-const registrationEnabled =
-  process.env.NEXT_PUBLIC_ENABLE_REGISTRATION === 'true'
+const registrationEnabled = process.env.ENABLE_REGISTRATION === 'true'
 
 async function verifyCaptcha(form: SubmissionData) {
   const resp = await fetch('https://hcaptcha.com/siteverify', {

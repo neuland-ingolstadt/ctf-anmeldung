@@ -1,18 +1,22 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
-    <div className="text-muted mt-3">
-      <center>
-        <small>
-          <a
-            href="https://neuland-ingolstadt.de/impressum.htm"
-            target="_blank"
-            rel="noreferrer"
-            className="impress"
-          >
-            Imprint & Privacy Policy
-          </a>
-        </small>
-      </center>
+    <div className="text-muted-foreground mt-32 flex flex-col items-center justify-center">
+      <Link
+        href="https://neuland-ingolstadt.de/legal/impressum/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Imprint
+      </Link>
+      <Link
+        href="https://neuland-ingolstadt.de/legal/datenschutz/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Privacy Policy
+      </Link>
     </div>
   )
 }

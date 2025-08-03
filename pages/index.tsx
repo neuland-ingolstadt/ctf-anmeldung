@@ -1,12 +1,23 @@
-import HCaptcha from '@hcaptcha/react-hcaptcha'
 import type { GetServerSideProps } from 'next'
-import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
+import Link from 'next/link'
 import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
+import Sponsors from '@/components/Sponsors'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import styles from '../styles/Home.module.css'
+import SignUpForm from '../components/SignUpForm'
+import Title from '../components/Title'
+
+const registrationEnabled =
+  process.env.NEXT_PUBLIC_ENABLE_REGISTRATION === 'true'
 
 interface HomeProps {
   hCaptchaSiteKey: string
@@ -23,29 +34,17 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 }
 
 export default function Home({ hCaptchaSiteKey }: HomeProps) {
-  const [verified, setVerified] = useState(false)
-
-  function genTitle(label: string) {
-    return (
-      <h4>
-        <span className={styles.promptWhite}>root</span>
-        <span className={styles.promptGrey}>@</span>
-        <span className={styles.promptWhite}>NEULAND</span>
-        <span className={styles.promptGrey}>:~#</span>
-        <span className={styles.promptWhite}> ./ctf-2023 </span>
-        <span className={styles.promptGrey}>--{label}</span>
-      </h4>
-    )
-  }
-
   return (
-    <Container className={`${styles.container} p-3`}>
+    <Container className="container-custom p-3">
       <Header />
       <br />
       <br />
-
-      {genTitle('info')}
+      <Title label="info" />
       <div>
+        The event already took place in December 2023. This is just an event
+        recap.
+        <br />
+        <br />
         Capture The Flag is a competition where you can legally hack and exploit
         intentionally vulnerable programs or websites. You will solve tasks in
         the categories web, steganography, blue team, cryptography, osint (open
@@ -56,185 +55,103 @@ export default function Home({ hCaptchaSiteKey }: HomeProps) {
         <br />
         In addition to getting to know students with the same interests and
         having fun solving puzzles, there is of course also free food (lunch &
-        dinner) + drinks and prizes for the best hackers. Every participant will
-        be rewarded with some merch and a Neuland CTF T-Shirt after the event.
-        We will allow a maximum of 45 participants, so make sure to secure
-        yourself a spot quickly.
+        dinner) + drinks and prizes for the best hackers. The participants get
+        merch and a Neuland CTF T-Shirt.
       </div>
       <br />
-
-      {genTitle('data')}
+      <Title label="data" />
       <div>
-        <b>Date</b>: 09.12.2023
-        <br />
-        <b>Time schedule</b>:
-        <table>
-          <tbody>
-            <tr>
-              <td className="td-1">10:30 a.m. - 11:00 a.m.</td>
-              <td className="td-2">Opening and introduction</td>
-            </tr>
-            <tr>
-              <td className="td-1">11:00 a.m. - 07:00 p.m.</td>
-              <td className="td-2">
-                CTF competition time during which flags can be handed in{' '}
-              </td>
-            </tr>
-            <tr>
-              <td className="td-1">07:00 p.m. - 09:00 p.m.</td>
-              <td className="td-2">Get together</td>
-            </tr>
-          </tbody>
-        </table>
-        <b>Place</b>: Technische Hochschule Ingolstadt in room G215
-        <br />
-        <b>Team size</b>: 1 - 3 team members
-        <br />
-        <b>Prizes</b>:
-        <table>
-          <tbody>
-            <tr>
-              <td className="td-1">1st team</td>
-              <td className="td-2">250 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">2nd team</td>
-              <td className="td-2">150 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">3rd team</td>
-              <td className="td-2">100 €</td>
-            </tr>
-            <tr>
-              <td className="td-1">4th & 5th team</td>
-              <td className="td-2">15 € voucher for each team member</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <br />
-
-      {genTitle('sponsors')}
-      <div>
-        <span className="inline_design">
-          <a href="https://www.mbda-deutschland.de/">
-            <img
-              src="/mbda-logo.svg"
-              alt="MBDA logo"
-              className="sponsor_mbda sponsor"
-            />
-          </a>
-          <a href="https://www.securai.de/">
-            <img
-              src="/securai-logo.png"
-              alt="Securai logo"
-              className="sponsor_securai sponsor"
-            />
-          </a>
-        </span>
-
-        <span className="inline_design">
-          <a href="https://www.isecng.de/">
-            <img
-              src="/isecng-logo.svg"
-              alt="iSecNG logo"
-              className="sponsor_isecng sponsor"
-            />
-          </a>
-          <a href="https://www.donat-it.de/">
-            <img
-              src="/donat_it-logo.svg"
-              alt="Donat IT logo"
-              className="sponsor_donat_it sponsor"
-            />
-          </a>
-        </span>
-      </div>
-      <br />
-
-      {genTitle('registration')}
-      <div>
-        You can register for the event with the following form. The number of
-        spots is limited. We will get back to you not later than 4 days before
-        the event to confirm or decline your registration.
-        <br />
-        The event is intended for the students at Technische Hochschule
-        Ingolstadt. Therefore, these registrations will be accepted preferably.
-        <br />
-        <br />
-        <Form method="post" action="api/submit">
-          <Form.Group className="mb-3">
-            <Form.Label>
-              Name <sup>*</sup>
-            </Form.Label>
-            <Form.Control name="name" type="text" required />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>
-              Email address <sup>*</sup>
-            </Form.Label>
-            <Form.Control name="email" type="email" required />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>
-              Course of study <sup>*</sup>
-            </Form.Label>
-            <Form.Control
-              name="course"
-              type="text"
-              placeholder="Computer Science 3rd semester bachelor, ..."
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>T-Shirt size (unisex)</Form.Label>
-            <Form.Select aria-label="T-Shirt size" name="shirt">
-              <option>None selected</option>
-              <option value="XXS">XXS</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
-              <option value="3XL">3XL</option>
-              <option value="4XL">4XL</option>
-              <option value="5XL">5XL</option>
-            </Form.Select>
-          </Form.Group>
-          <br />
+        <p>
+          <b>Date:</b> 09.12.2023
+        </p>
+        <Table className="my-6">
+          <TableCaption>
+            The time schedule is subject to change. Please check the website
+            closer to the event date.
+          </TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Time</TableHead>
+              <TableHead>Description</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>10:30 a.m. - 11:00 a.m.</TableCell>
+              <TableCell>Opening and introduction</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>11:00 a.m. - 07:00 p.m.</TableCell>
+              <TableCell>
+                CTF competition time during which flags can be handed in
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>07:00 p.m. - 09:00 p.m.</TableCell>
+              <TableCell>Get together</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+        <p>
+          <b>Place:</b> Technische Hochschule Ingolstadt in room G215
+        </p>
+        <div className="my-6">
           <p>
-            The above data is required for the planning and execution of the
-            Neuland CTF. Photographs will also be taken at the event. Further
-            information on data processing can be found in the{' '}
-            <a href="/privacy_policy.pdf" target="_blank" rel="noreferrer">
-              privacy policy
-            </a>
-            .
+            <b>Participants:</b> Limited to 45 participants.
           </p>
-          <br />
-          <center>
-            <Form.Group>
-              <HCaptcha
-                sitekey={hCaptchaSiteKey}
-                onVerify={() => setVerified(true)}
-              />
-            </Form.Group>
-          </center>
-          <br />
-          <center>
-            <Button
-              variant="primary"
-              type="submit"
-              disabled={!verified}
-              className="absend"
-            >
-              Send
-            </Button>
-          </center>
-        </Form>
+          <p>
+            <b>Registrations:</b> 90
+          </p>
+          <p>
+            <b>Team size:</b> 1-3 team members
+          </p>
+        </div>
+        <p className="mt-6 font-bold">Prizes and Winners:</p>
+        <Table className="mb-6">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Place</TableHead>
+              <TableHead>Prize</TableHead>
+              <TableHead>Winners</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>1st team</TableCell>
+              <TableCell>250 €</TableCell>
+              <TableCell>{'nland{s0lv3d}'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>2nd team</TableCell>
+              <TableCell>150 €</TableCell>
+              <TableCell>CyberCyberCyberfrösche</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>3rd team</TableCell>
+              <TableCell>100 €</TableCell>
+              <TableCell>s.Lit.</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>4th & 5th team</TableCell>
+              <TableCell>15 € voucher for each team member</TableCell>
+              <TableCell>IHK-Zertifiziert & GuardianOfTheFlag</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </div>
-      <br />
+
+      {registrationEnabled && <SignUpForm hCaptchaSiteKey={hCaptchaSiteKey} />}
+
+      <Sponsors />
+
+      <p>
+        The participants of the event can find the information on data
+        processing in the{' '}
+        <Link href={'/privacy_policy.pdf'} target="_blank" rel="noreferrer">
+          privacy policy
+        </Link>
+        .
+      </p>
       <Footer />
     </Container>
   )

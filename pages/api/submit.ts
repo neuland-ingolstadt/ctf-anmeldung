@@ -9,6 +9,9 @@ interface FormData {
   'h-captcha-response': string
 }
 
+const registrationEnabled =
+  process.env.NEXT_PUBLIC_ENABLE_REGISTRATION === 'true'
+
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: Number.parseInt(process.env.MAIL_PORT || '587'),
@@ -60,6 +63,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', ['POST'])
+    return res.status(405).end(`Method ${req.method} Not Allowed`)
+  }
+
+  if (!registrationEnabled) {
+    return res.status(403).json({ message: 'Registration is closed' })
+  }
+
   try {
     const form = req.body as FormData
     await verifyCaptcha(form)

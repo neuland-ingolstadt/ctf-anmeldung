@@ -20,18 +20,18 @@ export default function Header() {
           content="https://ctf.neuland-ingolstadt.de/neuland_ctf-logo.png"
         />
       </Head>
-      <center>
+      <div className="text-center flex flex-col items-center">
         <Image
           src="/neuland_ctf-logo.png"
-          className="mb-2 logo"
+          className="logo mb-2"
           alt="Neuland CTF Logo"
           width={120}
           height={120}
         />
-        <h1 className="mb-2 mt-4 text-center font-weight-bold">
+        <h1 className="mb-2 mt-4 text-center font-bold text-4xl text-primary">
           Neuland CTF 2023 Winter
         </h1>
-      </center>
+      </div>
     </>
   )
 }

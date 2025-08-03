@@ -1,10 +1,17 @@
 import type { AppProps } from 'next/app'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/globals.css'
-import '../public/dark.css'
+import '@/styles/globals.css'
+import { Space_Grotesk as GoogleFont } from 'next/font/google'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const font = GoogleFont({
+  subsets: ['latin'],
+  variable: '--sans-font',
+  display: 'swap',
+})
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <main className={`font-sans dark ${font.className}`}>
+      <Component {...pageProps} />
+    </main>
+  )
 }
-
-export default MyApp

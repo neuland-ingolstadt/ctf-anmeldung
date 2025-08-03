@@ -31,5 +31,6 @@
     "strings": "on"
   },
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "npm.packageManager": "pnpm"
+  "npm.packageManager": "pnpm",
+  
 }

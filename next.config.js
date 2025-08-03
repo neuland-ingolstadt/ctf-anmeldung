@@ -13,6 +13,7 @@ const ContentSecurityPolicy = `
   form-action 'self';
   worker-src 'self' blob:;
 `
+
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
@@ -42,8 +43,8 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   reactStrictMode: true,
+  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: true,
   },

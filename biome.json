@@ -4,10 +4,10 @@
   "files": {
     "ignoreUnknown": false,
     "includes": [
-      "components/**/*",
-      "pages/**/*",
-      "public/**/*",
-      "styles/**/*",
+      "components/**",
+      "pages/**",
+      "public/**",
+      "styles/**",
       "biome.json",
       "next.config.js",
       "package.json",

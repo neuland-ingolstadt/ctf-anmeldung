@@ -1,34 +1,43 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import nodemailer from 'nodemailer'
+
+interface FormData {
+  name: string
+  email: string
+  course: string
+  shirt?: string
+  'h-captcha-response': string
+}
 
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
-  port: parseInt(process.env.MAIL_PORT),
+  port: Number.parseInt(process.env.MAIL_PORT || '587'),
   secure: process.env.MAIL_TLS !== undefined,
   auth: {
     user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS
-  }
+    pass: process.env.MAIL_PASS,
+  },
 })
 
-function getSubject (form) {
+function getSubject(_form: FormData): string {
   return 'Neue Anmeldung zum CTF'
 }
 
-function getBody (form) {
+function getBody(form: FormData): string {
   return `Es ist eine neue Anmeldung eingegangen
 
 Name:\tE-Mail:\tStudiengang:\tT-Shirt Größe:
-${form.name}\t${form.email}\t${form.course}\t${form.shirt}
+${form.name}\t${form.email}\t${form.course}\t${form.shirt || 'Nicht angegeben'}
 `
 }
 
-async function verifyCaptcha (form) {
+async function verifyCaptcha(form: FormData): Promise<void> {
   const resp = await fetch('https://hcaptcha.com/siteverify', {
     method: 'POST',
     body: new URLSearchParams({
       response: form['h-captcha-response'],
-      secret: process.env.HCAPTCHA_SECRET
-    })
+      secret: process.env.HCAPTCHA_SECRET || '',
+    }),
   })
   if (resp.status !== 200) {
     throw new Error('Can not reach hCaptcha backend')
@@ -42,25 +51,29 @@ async function verifyCaptcha (form) {
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '1mb'
-    }
-  }
+      sizeLimit: '1mb',
+    },
+  },
 }
 
-export default async (req, res) => {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    const form = req.body
+    const form = req.body as FormData
     await verifyCaptcha(form)
     await transporter.sendMail({
       from: process.env.MAIL_FROM,
       to: process.env.MAIL_TO,
       replyTo: form.email || undefined,
       subject: getSubject(form),
-      text: getBody(form)
+      text: getBody(form),
     })
     res.redirect(302, '../done')
   } catch (e) {
     console.error(e)
-    res.redirect(302, '../error?message=' + encodeURIComponent(e.message))
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error'
+    res.redirect(302, `../error?message=${encodeURIComponent(errorMessage)}`)
   }
 }

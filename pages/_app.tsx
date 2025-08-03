@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import '@/styles/globals.css'
 import { Space_Grotesk as GoogleFont } from 'next/font/google'
+import { ThemeProvider } from '@/components/provider/themeProvider'
 
 const font = GoogleFont({
   subsets: ['latin'],
@@ -10,8 +11,10 @@ const font = GoogleFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`font-sans dark ${font.className}`}>
-      <Component {...pageProps} />
-    </main>
+    <ThemeProvider attribute="class" forcedTheme="dark">
+      <main className={`font-sans ${font.className}`}>
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
   )
 }

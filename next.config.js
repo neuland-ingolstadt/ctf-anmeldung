@@ -1,11 +1,11 @@
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.hcaptcha.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data:;
   font-src 'self';
-  connect-src 'self';
-  frame-src 'self';
+  connect-src 'self' https://sentry.hcaptcha.com https://newassets.hcaptcha.com/;
+  frame-src 'self' https://newassets.hcaptcha.com;
   media-src 'self';
   object-src 'none';
   child-src 'none';

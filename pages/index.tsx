@@ -1,6 +1,5 @@
 import type { GetServerSideProps } from 'next'
 import Link from 'next/link'
-import Container from 'react-bootstrap/Container'
 import Sponsors from '@/components/Sponsors'
 import {
   Table,
@@ -35,7 +34,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 
 export default function Home({ hCaptchaSiteKey }: HomeProps) {
   return (
-    <Container className="container-custom p-3">
+    <div className="container mx-auto max-w-4xl p-3">
       <Header />
       <br />
       <br />
@@ -153,6 +152,6 @@ export default function Home({ hCaptchaSiteKey }: HomeProps) {
         .
       </p>
       <Footer />
-    </Container>
+    </div>
   )
 }

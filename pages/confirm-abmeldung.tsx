@@ -1,13 +1,18 @@
-import Container from 'react-bootstrap/Container'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 export default function Home() {
   return (
-    <Container className="container-custom p-3">
+    <div className="container mx-auto max-w-4xl p-3">
       <Header />
-      <p className="abmelden">Sad to see you go :(</p>
+      <div className="flex flex-col items-center justify-center h-full gap-6 my-6">
+        <p className="abmelden text-xl font-bold">Sad to see you go :(</p>
+        <p>
+          You have successfully canceled your registration. If you have any
+          questions or concerns, please feel free to reach out to us.
+        </p>
+      </div>
       <Footer />
-    </Container>
+    </div>
   )
 }

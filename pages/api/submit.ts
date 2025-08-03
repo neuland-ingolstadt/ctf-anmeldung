@@ -1,40 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
+import React from 'react'
+import { sendEmail } from '@/lib/azure'
+import { type SubmissionData, submissionSchema } from '@/lib/schemas'
+import CTFSignupConfirmationEmail from '@/mail/confirmSignUp'
+import CTFSignupNotificationEmail from '@/mail/signUpNotification'
 
-interface FormData {
-  name: string
-  email: string
-  course: string
-  shirt?: string
-  'h-captcha-response': string
-}
+const mailTo = process.env.MAIL_TO || ''
 
 const registrationEnabled =
   process.env.NEXT_PUBLIC_ENABLE_REGISTRATION === 'true'
 
-const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
-  port: Number.parseInt(process.env.MAIL_PORT || '587'),
-  secure: process.env.MAIL_TLS !== undefined,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-})
-
-function getSubject(_form: FormData): string {
-  return 'Neue Anmeldung zum CTF'
-}
-
-function getBody(form: FormData): string {
-  return `Es ist eine neue Anmeldung eingegangen
-
-Name:\tE-Mail:\tStudiengang:\tT-Shirt Größe:
-${form.name}\t${form.email}\t${form.course}\t${form.shirt || 'Nicht angegeben'}
-`
-}
-
-async function verifyCaptcha(form: FormData): Promise<void> {
+async function verifyCaptcha(form: SubmissionData) {
   const resp = await fetch('https://hcaptcha.com/siteverify', {
     method: 'POST',
     body: new URLSearchParams({
@@ -51,41 +27,61 @@ async function verifyCaptcha(form: FormData): Promise<void> {
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '1mb',
-    },
-  },
-}
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST'])
-    return res.status(405).end(`Method ${req.method} Not Allowed`)
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` })
   }
 
   if (!registrationEnabled) {
-    return res.status(403).json({ message: 'Registration is closed' })
+    return res.status(403).json({ error: 'Registration is closed' })
   }
 
   try {
-    const form = req.body as FormData
-    await verifyCaptcha(form)
-    await transporter.sendMail({
-      from: process.env.MAIL_FROM,
-      to: process.env.MAIL_TO,
-      replyTo: form.email || undefined,
-      subject: getSubject(form),
-      text: getBody(form),
-    })
-    res.redirect(302, '../done')
+    const validationResult = await submissionSchema.safeParseAsync(req.body)
+    if (!validationResult.success) {
+      return res.status(400).json({
+        error: 'Invalid form data',
+        details: validationResult.error.issues,
+      })
+    }
+
+    await verifyCaptcha(validationResult.data)
+
+    const { name, email, course, shirt } = validationResult.data
+
+    await sendEmail(
+      validationResult.data.email,
+      'Your CTF Registration',
+      React.createElement(CTFSignupConfirmationEmail, {
+        name,
+        email,
+        shirtSize: shirt,
+        courseOfStudy: course,
+      })
+    )
+
+    await sendEmail(
+      mailTo,
+      'New CTF Registration',
+      React.createElement(CTFSignupNotificationEmail, {
+        name,
+        email: validationResult.data.email,
+        shirtSize: shirt,
+        courseOfStudy: course,
+        timestamp: new Date().toISOString(),
+      })
+    )
+
+    return res
+      .status(200)
+      .json({ success: true, message: 'Registration submitted successfully' })
   } catch (e) {
-    console.error(e)
+    console.error('Registration submission error:', e)
     const errorMessage = e instanceof Error ? e.message : 'Unknown error'
-    res.redirect(302, `../error?message=${encodeURIComponent(errorMessage)}`)
+    return res.status(500).json({ error: errorMessage })
   }
 }

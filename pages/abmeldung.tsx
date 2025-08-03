@@ -1,27 +1,28 @@
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
+import { useRouter } from 'next/router'
+import { Button } from '@/components/ui/button'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 export default function Home() {
+  const router = useRouter()
+
   return (
-    <Container className="container-custom p-3">
+    <div className="container mx-auto max-w-4xl p-3">
       <Header />
-      <p>
+      <div className="flex flex-col items-center justify-center h-full gap-6 my-6">
+        <p>
+          If you are unable to attend the event, please let us know by clicking
+          the button below. This helps us manage the event better and allows
+          others to take your spot.
+        </p>
         <Button
-          variant="primary"
-          className="abmelden"
-          type="submit"
-          onClick={() =>
-            window.location.replace(
-              window.location.href.replace('abmeldung', 'confirm-abmeldung')
-            )
-          }
+          className="text-white"
+          onClick={() => router.push('/confirm-abmeldung')}
         >
-          Click here if you will not make it to the event :(
+          Cancel Registration
         </Button>
-      </p>
+      </div>
       <Footer />
-    </Container>
+    </div>
   )
 }

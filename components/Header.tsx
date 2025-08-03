@@ -5,14 +5,14 @@ export default function Header() {
   return (
     <>
       <Head>
-        <title>Neuland CTF 2023 Winter</title>
-        <meta name="description" content="Neuland CTF 2023 Winter" />
+        <title>Neuland CTF</title>
+        <meta name="description" content="Neuland CTF" />
         <link rel="icon" type="image" href="neuland_ctf-logo.png" />
 
-        <meta property="og:title" content="Neuland CTF 2023 Winter" />
+        <meta property="og:title" content="Neuland CTF" />
         <meta
           property="og:description"
-          content="Neuland CTF 2023 Winter | 09.12.2023 | 10:30 a.m. - 09:00 p.m. | G215 - THI"
+          content="Neuland CTF | 09.12.2023 | 10:30 a.m. - 09:00 p.m. | G215 - THI"
         />
         <meta property="og:url" content="https://ctf.neuland-ingolstadt.de/" />
         <meta
@@ -29,7 +29,7 @@ export default function Header() {
           height={120}
         />
         <h1 className="mb-2 mt-4 text-center font-bold text-4xl text-primary">
-          Neuland CTF 2023 Winter
+          Neuland CTF
         </h1>
       </div>
     </>

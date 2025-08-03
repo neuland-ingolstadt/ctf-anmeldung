@@ -107,6 +107,19 @@ export default function Home({
             <b>Team size:</b> 1-3 team members
           </p>
         </div>
+
+        <div className="my-6">
+          <p>
+            <b>Blog Post:</b>{' '}
+            <Link
+              href="https://neuland-ingolstadt.de/blog/neuland-ctf-12-2023"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Neuland CTF 2023
+            </Link>
+          </p>
+        </div>
         <p className="mt-6 font-bold">Prizes and Winners:</p>
         <Table className="mb-6">
           <TableHeader>

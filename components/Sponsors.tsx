@@ -4,26 +4,26 @@ import React from 'react'
 import Title from '@/components/Title'
 
 const sponsors = [
-  {
-    name: 'MBDA',
-    url: 'https://www.mbda-deutschland.de/',
-    logo: '/mbda-logo.svg',
-  },
-  {
-    name: 'Securai',
-    url: 'https://www.securai.de/',
-    logo: '/securai-logo.png',
-  },
+  // {
+  //   name: 'MBDA',
+  //   url: 'https://www.mbda-deutschland.de/',
+  //   logo: '/mbda-logo.svg',
+  // },
+  // {
+  //   name: 'Securai',
+  //   url: 'https://www.securai.de/',
+  //   logo: '/securai-logo.png',
+  // },
   {
     name: 'iSecNG',
     url: 'https://www.isecng.de/',
     logo: '/isecng-logo.svg',
   },
-  {
-    name: 'Donat IT',
-    url: 'https://www.donat-it.de/',
-    logo: '/donat_it-logo.svg',
-  },
+  // {
+  //   name: 'Donat IT',
+  //   url: 'https://www.donat-it.de/',
+  //   logo: '/donat_it-logo.svg',
+  // },
 ] as const
 
 const Sponsors = React.memo(function Sponsors() {

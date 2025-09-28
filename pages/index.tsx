@@ -42,17 +42,18 @@ export default function Home({
       <br />
       <Title label="info" />
       <div>
-        The event already took place in December 2023. This is just an event
-        recap.
+        Join us for the Neuland CTF Winter 2025 - our third Capture The Flag
+        event!
         <br />
         <br />
         Capture The Flag is a competition where you can legally hack and exploit
         intentionally vulnerable programs or websites. You will solve tasks in
         the categories web, steganography, blue team, cryptography, osint (open
-        source intelligence), reverse engineering, pwn/binary exploitation and
-        miscellaneous tasks. For every hack, there is a flag that secures you
-        points and a place on the scoreboard. You do not need any previous
-        knowledge, the CTF includes tasks for all levels of experience.
+        source intelligence), reverse engineering, pwn/binary exploitation,
+        artificial intelligence and miscellaneous tasks. For every hack, there
+        is a flag that secures you points and a place on the scoreboard. You do
+        not need any previous knowledge, the CTF includes tasks for all levels
+        of experience.
         <br />
         In addition to getting to know students with the same interests and
         having fun solving puzzles, there is of course also free food (lunch &
@@ -63,7 +64,7 @@ export default function Home({
       <Title label="data" />
       <div>
         <p>
-          <b>Date:</b> 09.12.2023
+          <b>Date:</b> 06.12.2025
         </p>
         <Table className="my-6">
           <TableCaption>
@@ -89,7 +90,7 @@ export default function Home({
             </TableRow>
             <TableRow>
               <TableCell>07:00 p.m. - 09:00 p.m.</TableCell>
-              <TableCell>Get together</TableCell>
+              <TableCell>Get together session with sponsors</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -101,26 +102,57 @@ export default function Home({
             <b>Participants:</b> Limited to 45 participants.
           </p>
           <p>
-            <b>Registrations:</b> 90
+            <b>Registration deadline:</b> Approximately 2 weeks before the event
           </p>
           <p>
             <b>Team size:</b> 1-3 team members
+          </p>
+          <p>
+            <b>Priority:</b> Students from the Faculty of Computer Science are
+            preferred
           </p>
         </div>
 
         <div className="my-6">
           <p>
-            <b>Blog Post:</b>{' '}
+            <b>Previous CTF:</b>{' '}
             <Link
               href="https://neuland-ingolstadt.de/blog/neuland-ctf-12-2023"
               target="_blank"
               rel="noreferrer"
             >
-              Neuland CTF 2023
+              Neuland CTF 2023 Blog Post
             </Link>
           </p>
         </div>
-        <p className="mt-6 font-bold">Prizes and Winners:</p>
+        <p className="mt-6 font-bold">What to expect:</p>
+        <ul className="mb-6 list-disc list-outside pl-6">
+          <li>
+            <b>Categories:</b> Web, Steganography, Blue Team, Cryptography,
+            OSINT, Reverse Engineering, PWN/Binary Exploitation, AI (Artificial
+            Intelligence), and Miscellaneous
+          </li>
+          <li>
+            <b>New this year:</b> Expanded AI category with focus on artificial
+            intelligence challenges
+          </li>
+          <li>
+            <b>Free food:</b> Lunch and dinner provided by catering
+          </li>
+          <li>
+            <b>Prizes:</b> Cash prizes and vouchers for top teams
+          </li>
+          <li>
+            <b>Networking:</b> Meet with sponsors during the get-together
+            session
+          </li>
+          <li>
+            <b>Merch:</b> All participants receive Neuland CTF merchandise and
+            T-shirt
+          </li>
+        </ul>
+
+        {/* <p className="mt-6 font-bold">Prizes and Winners:</p>
         <Table className="mb-6">
           <TableHeader>
             <TableRow>
@@ -151,10 +183,22 @@ export default function Home({
               <TableCell>IHK-Zertifiziert & GuardianOfTheFlag</TableCell>
             </TableRow>
           </TableBody>
-        </Table>
+        </Table> */}
       </div>
 
-      {registrationEnabled && <SignUpForm hCaptchaSiteKey={hCaptchaSiteKey} />}
+      {registrationEnabled ? (
+        <SignUpForm hCaptchaSiteKey={hCaptchaSiteKey} />
+      ) : (
+        <div className="my-8 p-8 pt-0 border border-primary bg-primary/10 rounded-lg">
+          <Title label="registration" />
+          <p className="text-gray-300">
+            Registration is not yet open. It will be available closer to the
+            event date.
+            <br />
+            Follow us for updates on when registration opens!
+          </p>
+        </div>
+      )}
 
       <Sponsors />
 

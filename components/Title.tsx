@@ -11,7 +11,7 @@ const Title = React.memo(function Title({ label }: TitleProps) {
       <span className="text-muted-foreground">@</span>
       <span className="text-primary">NEULAND</span>
       <span className="text-muted-foreground">:~#</span>
-      <span className="text-primary"> ./ctf-2023 </span>
+      <span className="text-primary"> ./ctf-2025 </span>
       <span className="text-muted-foreground">--{label}</span>
     </h4>
   )

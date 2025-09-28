@@ -136,11 +136,12 @@ export default function Home({
             <b>New this year:</b> Expanded AI category with focus on artificial
             intelligence challenges
           </li>
-          <li>
+          {/* <li>
             <b>Free food:</b> Lunch and dinner provided by catering
-          </li>
+          </li> */}
           <li>
-            <b>Prizes:</b> Cash prizes and vouchers for top teams
+            <b>Prizes:</b> 1st place: 250€, 2nd place: 150€, 3rd place: 100€,
+            plus vouchers for top
           </li>
           <li>
             <b>Networking:</b> Meet with sponsors during the get-together

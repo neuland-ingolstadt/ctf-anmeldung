@@ -10,6 +10,7 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components'
+import MailFooter from '@/mail/components/footer'
 
 interface CTFSignupNotificationEmailProps {
   name: string
@@ -87,16 +88,7 @@ const CTFSignupNotificationEmail = ({
               </Section>
             </Section>
 
-            {/* Footer */}
-            <Section className="bg-[#2a2a2a] px-[32px] py-[20px] border-t border-solid border-[#404040]">
-              <Text className="text-[#4ade80] text-[14px] font-medium mb-[8px] m-0">
-                Neuland Ingolstadt e.V.
-              </Text>
-              <Text className="text-gray-500 text-[11px] m-0">
-                © {new Date().getFullYear()} Neuland Ingolstadt e.V. | Internal
-                Use Only
-              </Text>
-            </Section>
+            <MailFooter />
           </Container>
         </Body>
       </Tailwind>

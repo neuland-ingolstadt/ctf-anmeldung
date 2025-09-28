@@ -1,11 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import React from 'react'
 import { sendEmail } from '@/lib/azure'
+import { generateEmailConfirmationToken } from '@/lib/jwt'
 import { type SubmissionData, submissionSchema } from '@/lib/schemas'
-import CTFSignupConfirmationEmail from '@/mail/confirmSignUp'
-import CTFSignupNotificationEmail from '@/mail/signUpNotification'
-
-const mailTo = process.env.MAIL_TO || ''
+import CTFSignupEmailConfirmation from '@/mail/emailConfirmation'
 
 const registrationEnabled = process.env.ENABLE_REGISTRATION === 'true'
 
@@ -52,26 +50,24 @@ export default async function handler(
 
     const { name, email, course, shirt } = validationResult.data
 
-    await sendEmail(
-      validationResult.data.email,
-      'Your CTF Registration',
-      React.createElement(CTFSignupConfirmationEmail, {
-        name,
-        email,
-        shirtSize: shirt,
-        courseOfStudy: course,
-      })
-    )
+    // Generate confirmation token
+    const confirmationToken = generateEmailConfirmationToken({
+      name,
+      email,
+      course,
+      shirt,
+    })
 
+    // Create confirmation URL
+    const confirmationUrl = `${process.env.BASE_URL || 'http://localhost:3000'}/api/confirm-email?token=${confirmationToken}`
+
+    // Send email confirmation
     await sendEmail(
-      mailTo,
-      'New CTF Registration',
-      React.createElement(CTFSignupNotificationEmail, {
+      email,
+      'Please confirm your CTF registration',
+      React.createElement(CTFSignupEmailConfirmation, {
         name,
-        email: validationResult.data.email,
-        shirtSize: shirt,
-        courseOfStudy: course,
-        timestamp: new Date().toISOString(),
+        confirmationUrl,
       })
     )
 

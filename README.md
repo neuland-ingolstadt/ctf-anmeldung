@@ -46,6 +46,7 @@ A modern registration platform for Capture The Flag (CTF) competitions, built fo
    
    # Application Settings
    ENABLE_REGISTRATION=true
+   DISABLE_SITE=false
    JWT_SECRET=your_jwt_secret_key
    NEXT_PUBLIC_BASE_URL=http://localhost:3000
    ```

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@azure/communication-email": "^1.0.0",
-    "@hcaptcha/react-hcaptcha": "^1.12.1",
+    "@hcaptcha/react-hcaptcha": "^2.0.0",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.6",
